@@ -12,8 +12,8 @@
                     {{#unless devoured}}
                     <form action="/burgers/{{this.id}}" method="POST">
                         <div class="input-group">
-                            <li class="form-control">{{this.burger_name}}</li>
-                                <button class="btn btn-danger devour-button" type="submit">Devour!</button>
+                            <li class="form-control" >{{this.burger_name}}</li>
+                                <button class="btn btn-danger devour-button" data-id="{{this.id}}" type="submit">Devour!</button>
                         </div>
                     </form>
                     

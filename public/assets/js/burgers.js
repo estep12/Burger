@@ -1,17 +1,19 @@
 $(function(){
     $(".devour-button").on("click", function(event){
+        event.preventDefault();
         var id = $(this).data("id");
-        var newDevour = $(this).data("newdevour");
-
+        // var newDevour = $(this).data("newdevour");
+        console.log(id);
+        
         var newDevourState = {
-            devoured: newDevour
+            devoured: true
         };
 
-        $.ajax("/burgers" + id, {
+        $.ajax("/burgers/" + id, {
             type: "PUT",
             data: newDevourState
         }).then(function(){
-            console.log("Changed devour to", newDevour);
+            console.log("Changed devour to", newDevourState);
             location.reload();
             
         });

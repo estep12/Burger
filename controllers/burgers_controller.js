@@ -14,7 +14,7 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/burgers", function(req, res){
+router.post("/burgers/", function(req, res){
     burger.insertOne([
         "burger_name", "devoured"
     ],[
@@ -31,7 +31,7 @@ router.put("/burgers/:id", function(req, res){
 
     burger.updateOne({
         devoured: true
-    }, condition, function(data){
+    }, condition, function(result){
         if (result.changedRows == 0){
             return res.status(404).end();
         } else {
