@@ -4,10 +4,10 @@ $(function(){
         var newDevour = $(this).data("newdevour");
 
         var newDevourState = {
-            devour = newDevour
+            devour: newDevour
         };
 
-        $.ajax("/api/burgers" + id, {
+        $.ajax("/burgers" + id, {
             type: "PUT",
             data: newDevourState
         }).then(function(){
@@ -25,7 +25,7 @@ $(function(){
             devoured: 0
         }
 
-        $.ajax("api/burgers", {
+        $.ajax("/burgers", {
             type: "POST",
             data: newBurger
         }).then(function(){
