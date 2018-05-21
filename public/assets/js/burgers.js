@@ -4,7 +4,7 @@ $(function(){
         var newDevour = $(this).data("newdevour");
 
         var newDevourState = {
-            devour: newDevour
+            devoured: newDevour
         };
 
         $.ajax("/burgers" + id, {
@@ -22,7 +22,7 @@ $(function(){
 
         var newBurger = {
             burger_name: $("#bc").val().trim(),
-            devoured: 0
+            devoured: 1
         }
 
         $.ajax("/burgers", {

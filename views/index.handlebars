@@ -10,9 +10,9 @@
                 <div id="not-eaten">
                     {{#each burgers}} 
                     {{#unless devoured}}
-                    <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                    <form action="/burgers/{{this.id}}" method="POST">
                         <div class="input-group">
-                            <li class="form-control">{{burger_name}}</li>
+                            <li class="form-control">{{this.burger_name}}</li>
                                 <button class="btn btn-danger devour-button" type="submit">Devour!</button>
                         </div>
                     </form>
@@ -44,10 +44,10 @@
         <div class="col">
             <form class="create-form">
                 <div class="form-group">
-                    <label class="label" for="bc">Burger Name:</label>
+                    <label class="label" for="bc"></label>
                     <input type="text" id="bc" name="name" class="input">
                 </div>
-                <button type="submit" id="submit">Submit</button>
+                <button class="btn btn-warning submit-button" type="submit" id="submit">Submit</button>
             </form>
 
             <h4>Add your favorite burger and click "Submit" </h4>
